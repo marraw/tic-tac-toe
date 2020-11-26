@@ -1,3 +1,5 @@
+@import "../../../scss/variables";
+
 .backdrop {
   position: fixed;
   top: 50%;
@@ -6,7 +8,7 @@
   width: 100vw;
   transform: translate(-50%, -50%);
   z-index: 10;
-  background-color: rgba($color: #000, $alpha: 0.2);
+  background-color: rgba($color: #000, $alpha: 0.1);
 }
 
 .alert {
@@ -14,8 +16,9 @@
   top: 50%;
   left: 50%;
   padding: 120px;
-  background-color: #fff;
+  background-color: rgba($color: $charcoal, $alpha: 0.96);
   z-index: 10;
+  color: #fff;
   border-radius: 10%;
   animation: popup 1.2s both;
 
@@ -28,11 +31,12 @@
     text-align: center;
   }
 
-  &__play {
+  &__play-btn {
     position: fixed;
     bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
+    cursor: pointer;
   }
 }
 

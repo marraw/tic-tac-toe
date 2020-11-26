@@ -1,9 +1,12 @@
 <div class="backdrop"></div>
 <div class="alert">
   <p class="alert__text">
-    <strong>{{ winner }}</strong> wins!
+    <span *ngIf="winner === 'draw'">Draw!</span>
+    <span *ngIf="winner !== 'draw'"
+      ><strong>{{ winner }}</strong> wins!</span
+    >
   </p>
-  <button type="button" (click)="playButton()" class="alert__play btn">
+  <button type="button" (click)="playButton()" class="alert__play-btn btn">
     Play again
   </button>
 </div>

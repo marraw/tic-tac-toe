@@ -25,6 +25,7 @@ export class SquareComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   hideOutline() {
     this.square.nativeElement.classList.remove('square--tabfocus');
+    this.square.nativeElement.focus();
   }
 
   constructor() {}

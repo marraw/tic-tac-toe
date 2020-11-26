@@ -1,0 +1,18 @@
+body {
+  background-color: $cream;
+}
+
+.btn {
+  padding: 15px 25px;
+  font-size: 20px;
+  border-radius: 4%;
+  background-color: $sienna;
+  border: transparent;
+  color: #fff;
+  outline-color: $charcoal;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $sandy;
+  }
+}

@@ -74,6 +74,11 @@ export class BoardComponent implements OnInit {
       [0, 4, 8],
       [2, 4, 6],
     ];
+
+    const moves = this.board.filter((move) => {
+      return move === '';
+    });
+
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (
@@ -82,6 +87,8 @@ export class BoardComponent implements OnInit {
         this.board[a] === this.board[c]
       ) {
         this.winner = this.board[a];
+      } else if (moves.length === 0 && this.winner === '') {
+        this.winner = 'draw';
       }
     }
   }
