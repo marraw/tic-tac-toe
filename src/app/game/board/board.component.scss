@@ -1,0 +1,12 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 25vw);
+  grid-template-rows: repeat(3, 25vw);
+}
+
+@media (orientation: landscape) {
+  .board {
+    grid-template-columns: repeat(3, 25vh);
+    grid-template-rows: repeat(3, 25vh);
+  }
+}

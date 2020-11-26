@@ -1,0 +1,29 @@
+.square {
+  height: 99%;
+  width: 99%;
+  font-size: 60px;
+  outline: none;
+  background-color: #eee;
+
+  &--tabfocus:focus {
+    outline: 2px solid black;
+  }
+}
+
+@media (min-width: 768px) {
+  .square {
+    font-size: 110px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .square {
+    font-size: 130px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .square {
+    font-size: 150px;
+  }
+}
