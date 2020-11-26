@@ -4,6 +4,7 @@
   font-size: 60px;
   outline: none;
   background-color: #eee;
+  border: 1px solid black;
 
   &--tabfocus:focus {
     outline: 2px solid black;
@@ -12,18 +13,12 @@
 
 @media (min-width: 768px) {
   .square {
-    font-size: 110px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .square {
-    font-size: 130px;
+    font-size: 100px;
   }
 }
 
 @media (min-width: 1280px) {
   .square {
-    font-size: 150px;
+    font-size: 120px;
   }
 }

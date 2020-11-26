@@ -1,12 +1,26 @@
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 25vw);
-  grid-template-rows: repeat(3, 25vw);
+  grid-template-columns: repeat(3, 30vw);
+  grid-template-rows: repeat(3, 30vw);
 }
 
 @media (orientation: landscape) {
   .board {
     grid-template-columns: repeat(3, 25vh);
     grid-template-rows: repeat(3, 25vh);
+  }
+}
+
+@media (min-width: 768px) {
+  .board {
+    grid-template-columns: repeat(3, 15vh);
+    grid-template-rows: repeat(3, 15vh);
+  }
+}
+
+@media (min-width: 1024px) {
+  .board {
+    grid-template-columns: repeat(3, 20vh);
+    grid-template-rows: repeat(3, 20vh);
   }
 }

@@ -7,38 +7,61 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
   board: string[] = [];
-  nextPlayer!: boolean;
-  winner?: string;
+  playerHand!: 'X' | 'O';
+  aiMoving = false;
+  winner = '';
 
   constructor() {}
 
-  get playerHand(): 'X' | 'O' {
-    return this.nextPlayer ? 'X' : 'O';
+  get index(): number {
+    return Number((Math.random() * 9).toFixed());
   }
 
   ngOnInit(): void {
-    this.emptyBoard();
+    this.newGame();
   }
 
-  emptyBoard(): void {
+  newGame(): void {
     this.board = Array(9).fill('');
+    this.playerHand = 'X';
   }
 
   playerMove(i: number): void {
-    if (this.winner !== undefined) {
-      return;
+    if (this.aiMoving === false && this.winner === '') {
+      if (this.board[i] === '') {
+        this.board[i] = this.playerHand;
+
+        if (
+          this.board.filter((square) => {
+            return square === '';
+          }).length > 0
+        ) {
+          this.aiMoving = true;
+          setTimeout(() => {
+            this.playerHand = 'O';
+            this.aiMove();
+          }, 500);
+        }
+      }
     }
-    if (this.board[i] === '') {
-      this.board[i] = this.playerHand;
-      this.nextPlayer = !this.nextPlayer;
-    } else {
-      return;
-    }
-    this.winner = this.calculateWinner();
-    console.log(this.board);
+    this.calculateWinner();
   }
 
-  calculateWinner(): string | undefined {
+  aiMove(): void {
+    if (this.winner === '') {
+      let i = this.index;
+      if (this.board[i] === '') {
+        this.board[i] = this.playerHand;
+        this.aiMoving = false;
+        this.playerHand = 'X';
+      } else {
+        this.aiMove();
+      }
+    }
+    this.calculateWinner();
+  }
+
+  calculateWinner(): void {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -56,9 +79,8 @@ export class BoardComponent implements OnInit {
         this.board[a] === this.board[b] &&
         this.board[a] === this.board[c]
       ) {
-        return this.board[a];
+        this.winner = this.board[a];
       }
     }
-    return;
   }
 }
