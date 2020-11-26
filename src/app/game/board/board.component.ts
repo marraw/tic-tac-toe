@@ -23,6 +23,8 @@ export class BoardComponent implements OnInit {
 
   newGame(): void {
     this.board = Array(9).fill('');
+    this.winner = '';
+    this.aiMoving = false;
     this.playerHand = 'X';
   }
 
@@ -40,7 +42,7 @@ export class BoardComponent implements OnInit {
           setTimeout(() => {
             this.playerHand = 'O';
             this.aiMove();
-          }, 500);
+          }, 400);
         }
       }
     }
