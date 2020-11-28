@@ -1,0 +1,27 @@
+@import "../../../scss/variables";
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  background-color: $prussian;
+  color: #fff;
+
+  .author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link {
+    color: #fff;
+    margin-left: 10px;
+    font-size: 20px;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}

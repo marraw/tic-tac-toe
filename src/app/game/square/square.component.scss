@@ -5,30 +5,28 @@
   width: 99%;
   font-size: 60px;
   outline: none;
-  background-color: rgba($color: $sienna, $alpha: 0.8);
+  background-color: rgba($color: $imperial, $alpha: 0.9);
   border-radius: 4%;
   border: 0;
-  color: $charcoal;
+  transform: scale(1);
+  transition: transform 0s;
+  color: $prussian;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
   &--tabfocus:focus {
-    border: 2px $charcoal solid;
+    border: 2px $prussian solid;
+  }
+
+  &--hover-button {
+    transition: transform 0.2s;
+    transform: scale(1.02);
   }
 }
 
 @media (min-width: 768px) {
   .square {
     font-size: 100px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .square {
-    &:hover {
-      transform: scale(1.02);
-      border: 2px $charcoal solid;
-    }
   }
 }
 

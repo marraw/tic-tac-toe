@@ -1,18 +1,18 @@
 body {
-  background-color: $cream;
+  background-color: $honeydew;
 }
 
 .btn {
   padding: 15px 25px;
   font-size: 20px;
   border-radius: 4%;
-  background-color: $sienna;
+  background-color: $imperial;
   border: transparent;
   color: #fff;
-  outline-color: $charcoal;
+  outline-color: $prussian;
   transition: 0.2s;
 
   &:hover {
-    background-color: $sandy;
+    background-color: darken($imperial, 15%);
   }
 }

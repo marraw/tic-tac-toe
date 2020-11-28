@@ -17,15 +17,23 @@ export class SquareComponent implements OnInit {
   @ViewChild('square') square!: ElementRef;
 
   @HostListener('window:keydown', ['$event'])
-  handleTab(event: KeyboardEvent) {
+  showOutline(event: KeyboardEvent) {
     if (event.key === 'Tab') {
       this.square.nativeElement.classList.add('square--tabfocus');
     }
   }
-  @HostListener('document:click', ['$event'])
+  @HostListener('mousedown', ['$event'])
   hideOutline() {
     this.square.nativeElement.classList.remove('square--tabfocus');
-    this.square.nativeElement.focus();
+    this.square.nativeElement.classList.remove('square--hover-button');
+  }
+  @HostListener('mouseover', ['$event'])
+  growButton() {
+    this.square.nativeElement.classList.add('square--hover-button');
+  }
+  @HostListener('mouseout', ['$event'])
+  shrinkBurron() {
+    this.square.nativeElement.classList.remove('square--hover-button');
   }
 
   constructor() {}

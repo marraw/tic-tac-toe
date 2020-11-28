@@ -1,5 +1,6 @@
 <main class="board">
   <app-square
+    #square
     *ngFor="let square of board; let i = index"
     [value]="square"
     (click)="playerMove(i)"
