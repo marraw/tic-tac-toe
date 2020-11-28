@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="game-title">
+    <span class="game-title__word tic">Tic</span>
+    <span class="game-title__word tac">Tac</span>
+    <span class="game-title__word toe">Toe</span>
+  </h1>
+  <div class="play-buttons">
+    <button
+      class="play-buttons__btn btn"
+      *ngIf="!selectMode"
+      (click)="selectMode = true"
+    >
+      <i class="fas fa-gamepad"></i>Play now
+    </button>
+    <button class="play-buttons__btn btn" *ngIf="selectMode">
+      <i class="fas fa-user-friends"></i>VS friend
+    </button>
+    <button class="play-buttons__btn btn" *ngIf="selectMode" routerLink="play">
+      <i class="fas fa-robot"></i>
+      VS computer
+    </button>
+  </div>
+</div>

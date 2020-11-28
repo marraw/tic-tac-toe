@@ -10,7 +10,13 @@ body {
   border: transparent;
   color: #fff;
   outline-color: $prussian;
+  cursor: pointer;
   transition: 0.2s;
+  -webkit-tap-highlight-color: transparent;
+
+  & i {
+    margin-right: 10px;
+  }
 
   &:hover {
     background-color: darken($imperial, 15%);

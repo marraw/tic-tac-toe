@@ -1,0 +1,92 @@
+@import "../../../scss/variables";
+
+.container {
+  height: 60vh;
+  width: 80vw;
+
+  .game-title {
+    font-size: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    &__word {
+      &.tic {
+        color: darken($powder, 10%);
+        animation: title-animation 0.8s infinite linear;
+      }
+      &.tac {
+        color: $caladon;
+        animation: title-animation 1.2s infinite linear;
+      }
+      &.toe {
+        color: lighten($imperial, 10%);
+        animation: title-animation 1s infinite linear;
+      }
+    }
+  }
+
+  .play-buttons {
+    margin-top: 80px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__btn {
+      margin: 20px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 60vw;
+
+    .game-title {
+      font-size: 70px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 50vw;
+
+    .game-title {
+      font-size: 80px;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    width: 30vw;
+
+    .game-title {
+      font-size: 90px;
+    }
+  }
+}
+
+@keyframes title-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(6deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}

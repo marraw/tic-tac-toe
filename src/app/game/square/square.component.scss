@@ -1,8 +1,8 @@
 @import "../../../scss/variables";
 
 .square {
-  height: 99%;
-  width: 99%;
+  height: 98%;
+  width: 98%;
   font-size: 60px;
   outline: none;
   background-color: rgba($color: $imperial, $alpha: 0.9);
@@ -20,7 +20,7 @@
 
   &--hover-button {
     transition: transform 0.2s;
-    transform: scale(1.02);
+    transform: scale(1.03);
   }
 }
 

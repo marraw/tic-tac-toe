@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
-import { GameModule } from './game/game.module';
 import { SharedModule } from './shared/shared.module';
+import { StartModule } from './start/start.module';
+import { GameModule } from './game/game.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -13,8 +14,9 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    GameModule,
     SharedModule,
+    StartModule,
+    GameModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
