@@ -12,7 +12,7 @@ export class HeaderComponent {
   constructor(private router: Router) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
-        event.url === '/play'
+        event.url !== '/'
           ? (this.showHeader = true)
           : (this.showHeader = false);
       }

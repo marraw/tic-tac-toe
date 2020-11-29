@@ -4,13 +4,14 @@ body {
 
 .btn {
   padding: 15px 25px;
-  font-size: 20px;
+  font-size: 22px;
   border-radius: 4%;
   background-color: $imperial;
   border: transparent;
   color: #fff;
   outline-color: $prussian;
   cursor: pointer;
+  white-space: nowrap;
   transition: background-color 0.2s;
 
   & i {

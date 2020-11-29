@@ -2,7 +2,7 @@
 
 .container {
   height: 60vh;
-  width: 80vw;
+  width: 60vw;
 
   .game-title {
     font-size: 50px;
@@ -36,9 +36,19 @@
   }
 }
 
+@media (orientation: landscape) {
+  .container {
+    width: 40vw;
+
+    .play-buttons {
+      margin-top: 40px;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .container {
-    width: 60vw;
+    width: 45vw;
 
     .game-title {
       font-size: 70px;
@@ -46,15 +56,9 @@
   }
 }
 
-@media (orientation: landscape) {
-  .container {
-    width: 50vw;
-  }
-}
-
 @media (min-width: 1024px) {
   .container {
-    width: 50vw;
+    width: 40vw;
 
     .game-title {
       font-size: 80px;
