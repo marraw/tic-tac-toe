@@ -11,8 +11,6 @@ export class BoardComponent implements OnInit {
   aiMoving = false;
   winner = '';
 
-  constructor() {}
-
   get index(): number {
     return Number((Math.random() * 9).toFixed());
   }
@@ -51,7 +49,7 @@ export class BoardComponent implements OnInit {
 
   aiMove(): void {
     if (this.winner === '') {
-      let i = this.index;
+      const i = this.index;
       if (this.board[i] === '') {
         this.board[i] = this.playerHand;
         this.aiMoving = false;
@@ -79,8 +77,8 @@ export class BoardComponent implements OnInit {
       return move === '';
     });
 
-    for (let i = 0; i < lines.length; i++) {
-      const [a, b, c] = lines[i];
+    for (const line of lines) {
+      const [a, b, c] = line;
       if (
         this.board[a] &&
         this.board[a] === this.board[b] &&

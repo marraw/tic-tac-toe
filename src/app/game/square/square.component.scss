@@ -12,13 +12,12 @@
   transition: transform 0s;
   color: $prussian;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
 
-  &--tabfocus:focus {
-    border: 2px $prussian solid;
+  &--tab-focus:focus {
+    border: 3px $prussian solid;
   }
 
-  &--hover-button {
+  &--hover-btn {
     transition: transform 0.2s;
     transform: scale(1.03);
   }

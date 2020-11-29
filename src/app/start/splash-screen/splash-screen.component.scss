@@ -11,15 +11,12 @@
 
     &__word {
       &.tic {
-        color: darken($powder, 10%);
         animation: title-animation 0.8s infinite linear;
       }
       &.tac {
-        color: $caladon;
         animation: title-animation 1.2s infinite linear;
       }
       &.toe {
-        color: lighten($imperial, 10%);
         animation: title-animation 1s infinite linear;
       }
     }
@@ -46,6 +43,12 @@
     .game-title {
       font-size: 70px;
     }
+  }
+}
+
+@media (orientation: landscape) {
+  .container {
+    width: 50vw;
   }
 }
 

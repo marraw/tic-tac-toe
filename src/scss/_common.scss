@@ -11,8 +11,7 @@ body {
   color: #fff;
   outline-color: $prussian;
   cursor: pointer;
-  transition: 0.2s;
-  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s;
 
   & i {
     margin-right: 10px;
@@ -20,5 +19,19 @@ body {
 
   &:hover {
     background-color: darken($imperial, 15%);
+  }
+}
+
+.game-title {
+  &__word {
+    &.tic {
+      color: darken($powder, 10%);
+    }
+    &.tac {
+      color: $caladon;
+    }
+    &.toe {
+      color: lighten($imperial, 10%);
+    }
   }
 }

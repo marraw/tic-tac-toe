@@ -1,0 +1,69 @@
+@import "../../../scss/variables";
+
+header {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .go-back {
+    position: fixed;
+    left: 5vw;
+    font-size: 35px;
+    color: lighten($prussian, 25%);
+    animation: go-back infinite 2.5s;
+  }
+
+  .game-title {
+    font-size: 30px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    top: 50px;
+
+    .go-back {
+      font-size: 50px;
+      left: 10vw;
+    }
+
+    .game-title {
+      font-size: 45px;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  header {
+    top: 60px;
+
+    .go-back {
+      font-size: 55px;
+      left: 20vw;
+    }
+
+    .game-title {
+      font-size: 50px;
+    }
+  }
+}
+
+@keyframes go-back {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  10% {
+    transform: scale(1);
+  }
+}

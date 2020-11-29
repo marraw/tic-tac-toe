@@ -9,15 +9,16 @@
       class="play-buttons__btn btn"
       *ngIf="!selectMode"
       (click)="selectMode = true"
+      aria-label="Select game mode"
     >
-      <i class="fas fa-gamepad"></i>Play now
+      <i class="fas fa-gamepad" aria-hidden="true"></i>Play now
     </button>
-    <button class="play-buttons__btn btn" *ngIf="selectMode">
-      <i class="fas fa-user-friends"></i>VS friend
-    </button>
-    <button class="play-buttons__btn btn" *ngIf="selectMode" routerLink="play">
-      <i class="fas fa-robot"></i>
+    <a class="play-buttons__btn btn" *ngIf="selectMode">
+      <i class="fas fa-user-friends" aria-hidden="true"></i>VS friend
+    </a>
+    <a class="play-buttons__btn btn" *ngIf="selectMode" routerLink="play">
+      <i class="fas fa-robot" aria-hidden="true"></i>
       VS computer
-    </button>
+    </a>
   </div>
 </div>

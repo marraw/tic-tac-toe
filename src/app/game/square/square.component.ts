@@ -3,7 +3,6 @@ import {
   ElementRef,
   HostListener,
   Input,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 
@@ -12,31 +11,31 @@ import {
   templateUrl: './square.component.html',
   styleUrls: ['./square.component.scss'],
 })
-export class SquareComponent implements OnInit {
+export class SquareComponent {
   @Input() value?: string;
   @ViewChild('square') square!: ElementRef;
 
   @HostListener('window:keydown', ['$event'])
-  showOutline(event: KeyboardEvent) {
+  showOutline(event: KeyboardEvent): void {
     if (event.key === 'Tab') {
-      this.square.nativeElement.classList.add('square--tabfocus');
+      this.square.nativeElement.classList.add('square--tab-focus');
+      this.square.nativeElement.classList.remove('square--hover-btn');
     }
   }
+
   @HostListener('mousedown', ['$event'])
-  hideOutline() {
-    this.square.nativeElement.classList.remove('square--tabfocus');
-    this.square.nativeElement.classList.remove('square--hover-button');
+  hideOutline(): void {
+    this.square.nativeElement.classList.remove('square--tab-focus');
+    this.square.nativeElement.classList.remove('square--hover-btn');
   }
+
   @HostListener('mouseover', ['$event'])
-  growButton() {
-    this.square.nativeElement.classList.add('square--hover-button');
+  growButton(): void {
+    this.square.nativeElement.classList.add('square--hover-btn');
   }
+
   @HostListener('mouseout', ['$event'])
-  shrinkBurron() {
-    this.square.nativeElement.classList.remove('square--hover-button');
+  shrinkBurron(): void {
+    this.square.nativeElement.classList.remove('square--hover-btn');
   }
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

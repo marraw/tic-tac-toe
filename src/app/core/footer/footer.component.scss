@@ -6,7 +6,7 @@ footer {
   height: 40px;
   line-height: 40px;
   width: 100%;
-  background-color: $prussian;
+  background-color: lighten($prussian, 5%);
   color: #fff;
 
   .author {
