@@ -2,7 +2,7 @@
 
 header {
   position: fixed;
-  top: 30px;
+  top: 40px;
   left: 50%;
   width: 100%;
   display: flex;
@@ -12,15 +12,33 @@ header {
     position: fixed;
     left: 5vw;
     font-size: 35px;
-    color: lighten($prussian, 25%);
+    color: $caladon;
     animation: go-back infinite 2.5s;
+
+    &:hover {
+      color: darken($caladon, 15%);
+    }
   }
 
   .game-title {
-    font-size: 30px;
+    font-size: 35px;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+@media (orientation: landscape) and (max-width: 767px) {
+  header {
+    top: 22px;
+
+    .game-title {
+      font-size: 26px;
+    }
+
+    .go-back {
+      font-size: 26px;
+    }
   }
 }
 

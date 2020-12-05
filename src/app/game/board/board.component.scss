@@ -5,10 +5,10 @@
   grid-template-rows: repeat(3, 30vw);
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 767px) {
   .board {
-    grid-template-columns: repeat(3, 22vh);
-    grid-template-rows: repeat(3, 22vh);
+    grid-template-columns: repeat(3, 20vh);
+    grid-template-rows: repeat(3, 20vh);
   }
 }
 

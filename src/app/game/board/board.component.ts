@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-board',
@@ -10,6 +11,8 @@ export class BoardComponent implements OnInit {
   playerHand!: 'X' | 'O';
   aiMoving = false;
   winner = '';
+
+  constructor(private gameService: GameService) {}
 
   get index(): number {
     return Number((Math.random() * 9).toFixed());
@@ -30,6 +33,7 @@ export class BoardComponent implements OnInit {
     if (this.aiMoving === false && this.winner === '') {
       if (this.board[i] === '') {
         this.board[i] = this.playerHand;
+        this.calculateWinner();
 
         if (
           this.board.filter((square) => {
@@ -44,7 +48,6 @@ export class BoardComponent implements OnInit {
         }
       }
     }
-    this.calculateWinner();
   }
 
   aiMove(): void {
@@ -52,13 +55,13 @@ export class BoardComponent implements OnInit {
       const i = this.index;
       if (this.board[i] === '') {
         this.board[i] = this.playerHand;
+        this.calculateWinner();
         this.aiMoving = false;
         this.playerHand = 'X';
       } else {
         this.aiMove();
       }
     }
-    this.calculateWinner();
   }
 
   calculateWinner(): void {
@@ -85,6 +88,7 @@ export class BoardComponent implements OnInit {
         this.board[a] === this.board[c]
       ) {
         this.winner = this.board[a];
+        this.gameService.updateScore(this.winner);
       } else if (moves.length === 0 && this.winner === '') {
         this.winner = 'draw';
       }

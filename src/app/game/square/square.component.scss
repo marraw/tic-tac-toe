@@ -23,6 +23,12 @@
   }
 }
 
+@media (orientation: landscape) and (max-width: 767px) {
+  .square {
+    font-size: 35px;
+  }
+}
+
 @media (min-width: 768px) {
   .square {
     font-size: 100px;

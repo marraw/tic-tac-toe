@@ -1,0 +1,85 @@
+@import "../../../scss/variables";
+@import "../../../scss/fonts";
+
+.score {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 0 15px;
+  font-size: 30px;
+  white-space: nowrap;
+  background-color: darken($caladon, 5%);
+  border-radius: 4%;
+  color: #fff;
+
+  &__player {
+    font-size: 40px;
+    margin-right: 8px;
+  }
+
+  &--x {
+    top: -22%;
+  }
+
+  &--o {
+    bottom: -22%;
+  }
+}
+
+@media (orientation: landscape) {
+  .score {
+    &--x {
+      top: 50%;
+      left: -45%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--o {
+      bottom: 50%;
+      left: 145%;
+      transform: translate(-50%, 50%);
+    }
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .score {
+    font-size: 50px;
+
+    &__player {
+      font-size: 70px;
+    }
+
+    &--x {
+      top: -30%;
+    }
+
+    &--o {
+      bottom: -30%;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .score {
+    font-size: 40px;
+
+    &__player {
+      font-size: 60px;
+    }
+
+    &--x {
+      top: 50%;
+      left: -30%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--o {
+      bottom: 50%;
+      left: 130%;
+      transform: translate(-50%, 50%);
+    }
+  }
+}

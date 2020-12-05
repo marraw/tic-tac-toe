@@ -36,12 +36,22 @@
   }
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 767px) {
   .container {
-    width: 40vw;
+    height: 80vh;
+    width: 30vw;
+
+    .game-title {
+      font-size: 40px;
+    }
 
     .play-buttons {
-      margin-top: 40px;
+      margin-top: 25px;
+
+      &__btn {
+        margin: 10px;
+        font-size: 15px;
+      }
     }
   }
 }
@@ -52,6 +62,15 @@
 
     .game-title {
       font-size: 70px;
+    }
+
+    .play-buttons {
+      margin-top: 80px;
+
+      &__btn {
+        margin: 20px;
+        font-size: 22px;
+      }
     }
   }
 }
