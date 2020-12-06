@@ -13,6 +13,7 @@
   background-color: darken($caladon, 5%);
   border-radius: 4%;
   color: #fff;
+  transition: transform 0.4s;
 
   &__player {
     font-size: 40px;
