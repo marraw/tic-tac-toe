@@ -28,6 +28,23 @@
   }
 }
 
+@media (max-height: 667px) {
+  .score {
+    font-size: 25px;
+    &__player {
+      font-size: 35px;
+    }
+
+    &--x {
+      top: -20%;
+    }
+
+    &--o {
+      bottom: -20%;
+    }
+  }
+}
+
 @media (orientation: landscape) {
   .score {
     &--x {
@@ -46,10 +63,10 @@
 
 @media (min-width: 768px) and (orientation: portrait) {
   .score {
-    font-size: 50px;
+    font-size: 35px;
 
     &__player {
-      font-size: 70px;
+      font-size: 50px;
     }
 
     &--x {
@@ -58,6 +75,24 @@
 
     &--o {
       bottom: -30%;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+  .score {
+    font-size: 40px;
+
+    &__player {
+      font-size: 60px;
+    }
+
+    &--x {
+      top: -15%;
+    }
+
+    &--o {
+      bottom: -15%;
     }
   }
 }

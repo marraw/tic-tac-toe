@@ -36,26 +36,6 @@
   }
 }
 
-@media (orientation: landscape) and (max-width: 767px) {
-  .container {
-    height: 80vh;
-    width: 30vw;
-
-    .game-title {
-      font-size: 40px;
-    }
-
-    .play-buttons {
-      margin-top: 25px;
-
-      &__btn {
-        margin: 10px;
-        font-size: 15px;
-      }
-    }
-  }
-}
-
 @media (min-width: 768px) {
   .container {
     width: 45vw;
@@ -75,12 +55,41 @@
   }
 }
 
+@media (orientation: landscape) and (max-width: 1024px) {
+  .container {
+    height: 70vh;
+    width: 30vw;
+
+    .game-title {
+      font-size: 40px;
+    }
+
+    .play-buttons {
+      margin-top: 25px;
+
+      &__btn {
+        margin: 10px;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
 @media (min-width: 1024px) {
   .container {
     width: 40vw;
 
     .game-title {
       font-size: 80px;
+    }
+
+    .play-buttons {
+      margin-top: 80px;
+
+      &__btn {
+        margin: 20px;
+        font-size: 22px;
+      }
     }
   }
 }

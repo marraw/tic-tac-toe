@@ -8,7 +8,7 @@ import { GameService } from '../game.service';
   styleUrls: ['./score.component.scss'],
 })
 export class ScoreComponent implements OnInit, OnDestroy {
-  score!: number[];
+  score = [0, 0];
 
   getScore!: Subscription;
 

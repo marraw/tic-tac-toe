@@ -58,16 +58,6 @@
   }
 }
 
-@media (orientation: landscape) {
-  .alert {
-    padding: 80px;
-
-    &__play-btn {
-      font-size: 15px;
-    }
-  }
-}
-
 @media (min-width: 768px) {
   .alert {
     padding: 180px;
@@ -82,9 +72,31 @@
   }
 }
 
+@media (orientation: landscape) and (max-width: 1024px) {
+  .alert {
+    padding: 90px;
+
+    &__text {
+      font-size: 22px;
+    }
+
+    &__play-btn {
+      font-size: 15px;
+    }
+  }
+}
+
 @media (min-width: 1024px) {
   .alert {
     padding: 200px;
+
+    &__text {
+      font-size: 40px;
+    }
+
+    &__play-btn {
+      font-size: 22px;
+    }
   }
 }
 

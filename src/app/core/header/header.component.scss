@@ -28,20 +28,6 @@ header {
   }
 }
 
-@media (orientation: landscape) and (max-width: 767px) {
-  header {
-    top: 22px;
-
-    .game-title {
-      font-size: 26px;
-    }
-
-    .go-back {
-      font-size: 26px;
-    }
-  }
-}
-
 @media (min-width: 768px) {
   header {
     top: 50px;
@@ -53,6 +39,34 @@ header {
 
     .game-title {
       font-size: 45px;
+    }
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+  header {
+    top: 25px;
+
+    .game-title {
+      font-size: 30px;
+    }
+
+    .go-back {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    top: 40px;
+
+    .go-back {
+      font-size: 40px;
+    }
+
+    .game-title {
+      font-size: 40px;
     }
   }
 }

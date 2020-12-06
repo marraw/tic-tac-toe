@@ -5,10 +5,10 @@
   grid-template-rows: repeat(3, 30vw);
 }
 
-@media (orientation: landscape) and (max-width: 767px) {
+@media (max-height: 640px) {
   .board {
-    grid-template-columns: repeat(3, 20vh);
-    grid-template-rows: repeat(3, 20vh);
+    grid-template-columns: repeat(3, 27vw);
+    grid-template-rows: repeat(3, 27vw);
   }
 }
 
@@ -17,6 +17,13 @@
     gap: 4px;
     grid-template-columns: repeat(3, 15vh);
     grid-template-rows: repeat(3, 15vh);
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+  .board {
+    grid-template-columns: repeat(3, 20vh);
+    grid-template-rows: repeat(3, 20vh);
   }
 }
 
