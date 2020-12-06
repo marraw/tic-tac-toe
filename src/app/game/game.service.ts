@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class GameService {
   score = [0, 0];
-  gameEnd = new Subject<number[]>();
+  winnerScore = new Subject<number[]>();
+
+  gameMode!: 'friend' | 'ai';
 
   updateScore(winner: string): void {
     if (winner === 'X') {
@@ -12,6 +14,10 @@ export class GameService {
     } else if (winner === 'O') {
       this.score[1]++;
     }
-    this.gameEnd.next(this.score);
+    this.winnerScore.next(this.score);
+  }
+
+  selectedMode(mode: 'friend' | 'ai'): void {
+    this.gameMode = mode;
   }
 }

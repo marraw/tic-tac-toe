@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GameService } from '../game.service';
 
 @Component({
@@ -11,15 +12,16 @@ export class BoardComponent implements OnInit {
   playerHand!: 'X' | 'O';
   aiMoving = false;
   winner = '';
+  gameMode!: 'friend' | 'ai';
 
-  constructor(private gameService: GameService) {}
-
-  get index(): number {
-    return Number((Math.random() * 9).toFixed());
-  }
+  constructor(private router: Router, private gameService: GameService) {}
 
   ngOnInit(): void {
     this.newGame();
+    this.gameMode = this.gameService.gameMode;
+    if (this.gameMode === undefined) {
+      this.router.navigate(['']);
+    }
   }
 
   newGame(): void {
@@ -40,11 +42,18 @@ export class BoardComponent implements OnInit {
             return square === '';
           }).length > 0
         ) {
-          this.aiMoving = true;
-          setTimeout(() => {
+          if (this.playerHand === 'X') {
             this.playerHand = 'O';
-            this.aiMove();
-          }, 400);
+          } else {
+            this.playerHand = 'X';
+          }
+
+          if (this.gameMode === 'ai') {
+            this.aiMoving = true;
+            setTimeout(() => {
+              this.aiMove();
+            }, 400);
+          }
         }
       }
     }
@@ -52,7 +61,7 @@ export class BoardComponent implements OnInit {
 
   aiMove(): void {
     if (this.winner === '') {
-      const i = this.index;
+      const i = Number((Math.random() * 9).toFixed());
       if (this.board[i] === '') {
         this.board[i] = this.playerHand;
         this.calculateWinner();

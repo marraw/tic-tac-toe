@@ -8,19 +8,21 @@ import { GameService } from '../game.service';
   styleUrls: ['./score.component.scss'],
 })
 export class ScoreComponent implements OnInit, OnDestroy {
-  score = [0, 0];
+  score!: number[];
 
   getScore!: Subscription;
 
   constructor(private gameService: GameService) {}
 
   ngOnInit(): void {
-    this.getScore = this.gameService.gameEnd.subscribe((newScore) => {
-      this.score = newScore;
+    this.score = [0, 0];
+    this.getScore = this.gameService.winnerScore.subscribe((score) => {
+      this.score = score;
     });
   }
 
   ngOnDestroy(): void {
+    this.gameService.score = [0, 0];
     this.getScore.unsubscribe();
   }
 }

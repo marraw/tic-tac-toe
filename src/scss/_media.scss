@@ -1,0 +1,35 @@
+@media (min-width: 768px) {
+  .dialog-window {
+    padding: 180px;
+  }
+
+  .btn {
+    font-size: 22px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+  .dialog-window {
+    padding: 90px;
+  }
+
+  .btn {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dialog-window {
+    padding: 200px;
+
+    .btn {
+      font-size: 22px;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .dialog-window {
+    padding: 220px;
+  }
+}

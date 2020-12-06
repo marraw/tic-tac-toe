@@ -7,16 +7,26 @@
   <div class="play-buttons">
     <button
       class="play-buttons__btn btn"
-      *ngIf="!selectMode"
-      (click)="selectMode = true"
+      *ngIf="!gameMode"
+      (click)="gameMode = true"
       aria-label="Select game mode"
     >
       <i class="fas fa-gamepad" aria-hidden="true"></i>Play now
     </button>
-    <a class="play-buttons__btn btn" *ngIf="selectMode">
+    <a
+      class="play-buttons__btn btn"
+      *ngIf="gameMode"
+      routerLink="play"
+      (click)="selectMode('friend')"
+    >
       <i class="fas fa-user-friends" aria-hidden="true"></i>VS friend
     </a>
-    <a class="play-buttons__btn btn" *ngIf="selectMode" routerLink="play">
+    <a
+      class="play-buttons__btn btn"
+      *ngIf="gameMode"
+      routerLink="play"
+      (click)="selectMode('ai')"
+    >
       <i class="fas fa-robot" aria-hidden="true"></i>
       VS computer
     </a>

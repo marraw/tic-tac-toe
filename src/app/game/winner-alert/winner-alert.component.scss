@@ -12,14 +12,6 @@
 }
 
 .alert {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  padding: 120px;
-  background-color: rgba($color: $prussian, $alpha: 0.95);
-  z-index: 10;
-  color: #fff;
-  border-radius: 10%;
   animation: popup 1.2s both;
 
   &__text {
@@ -29,14 +21,6 @@
     transform: translateX(-50%);
     font-size: 25px;
     text-align: center;
-  }
-
-  &__play-btn {
-    position: fixed;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
   }
 }
 
@@ -60,50 +44,30 @@
 
 @media (min-width: 768px) {
   .alert {
-    padding: 180px;
-
     &__text {
       font-size: 45px;
-    }
-
-    &__play-btn {
-      font-size: 22px;
     }
   }
 }
 
 @media (orientation: landscape) and (max-width: 1024px) {
   .alert {
-    padding: 90px;
-
     &__text {
       font-size: 22px;
-    }
-
-    &__play-btn {
-      font-size: 15px;
     }
   }
 }
 
 @media (min-width: 1024px) {
   .alert {
-    padding: 200px;
-
     &__text {
       font-size: 40px;
-    }
-
-    &__play-btn {
-      font-size: 22px;
     }
   }
 }
 
 @media (min-width: 1280px) {
   .alert {
-    padding: 220px;
-
     &__text {
       font-size: 50px;
     }
