@@ -3,7 +3,7 @@
   <app-square
     #square
     *ngFor="let square of board; let i = index"
-    [value]="square"
+    [button]="square"
     (click)="playerMove(i)"
   ></app-square>
 </main>

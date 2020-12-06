@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { GameService } from '../game.service';
+import { GameService } from '../../shared/game.service';
 
 @Component({
   selector: 'app-board',
@@ -61,14 +61,182 @@ export class BoardComponent implements OnInit {
 
   aiMove(): void {
     if (this.winner === '') {
-      const i = Number((Math.random() * 9).toFixed());
-      if (this.board[i] === '') {
-        this.board[i] = this.playerHand;
+      const endMove = () => {
         this.calculateWinner();
         this.aiMoving = false;
         this.playerHand = 'X';
+      };
+
+      if (
+        this.board[0] === 'X' &&
+        this.board[2] === 'X' &&
+        this.board[1] === ''
+      ) {
+        this.board[1] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[3] === 'X' &&
+        this.board[5] === 'X' &&
+        this.board[4] === ''
+      ) {
+        this.board[4] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[6] === 'X' &&
+        this.board[8] === 'X' &&
+        this.board[7] === ''
+      ) {
+        this.board[7] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[0] === 'X' &&
+        this.board[6] === 'X' &&
+        this.board[3] === ''
+      ) {
+        this.board[3] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[1] === 'X' &&
+        this.board[7] === 'X' &&
+        this.board[4] === ''
+      ) {
+        this.board[4] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[2] === 'X' &&
+        this.board[8] === 'X' &&
+        this.board[5] === ''
+      ) {
+        this.board[5] = this.playerHand;
+        endMove();
+      } else if (
+        (this.board[0] === 'X' &&
+          this.board[8] === 'X' &&
+          this.board[4] === '') ||
+        (this.board[2] === 'X' && this.board[6] === 'X' && this.board[4] === '')
+      ) {
+        this.board[4] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[0] === 'X' &&
+        this.board[1] === 'X' &&
+        this.board[2] === ''
+      ) {
+        this.board[2] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[3] === 'X' &&
+        this.board[4] === 'X' &&
+        this.board[5] === ''
+      ) {
+        this.board[5] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[6] === 'X' &&
+        this.board[7] === 'X' &&
+        this.board[8] === ''
+      ) {
+        this.board[8] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[0] === 'X' &&
+        this.board[3] === 'X' &&
+        this.board[6] === ''
+      ) {
+        this.board[6] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[1] === 'X' &&
+        this.board[4] === 'X' &&
+        this.board[7] === ''
+      ) {
+        this.board[7] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[2] === 'X' &&
+        this.board[5] === 'X' &&
+        this.board[8] === ''
+      ) {
+        this.board[8] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[1] === 'X' &&
+        this.board[2] === 'X' &&
+        this.board[0] === ''
+      ) {
+        this.board[0] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[4] === 'X' &&
+        this.board[5] === 'X' &&
+        this.board[3] === ''
+      ) {
+        this.board[3] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[7] === 'X' &&
+        this.board[8] === 'X' &&
+        this.board[6] === ''
+      ) {
+        this.board[6] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[3] === 'X' &&
+        this.board[6] === 'X' &&
+        this.board[0] === ''
+      ) {
+        this.board[0] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[4] === 'X' &&
+        this.board[7] === 'X' &&
+        this.board[1] === ''
+      ) {
+        this.board[1] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[5] === 'X' &&
+        this.board[8] === 'X' &&
+        this.board[2] === ''
+      ) {
+        this.board[2] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[0] === 'X' &&
+        this.board[4] === 'X' &&
+        this.board[8] === ''
+      ) {
+        this.board[8] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[2] === 'X' &&
+        this.board[4] === 'X' &&
+        this.board[6] === ''
+      ) {
+        this.board[6] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[6] === 'X' &&
+        this.board[4] === 'X' &&
+        this.board[2] === ''
+      ) {
+        this.board[2] = this.playerHand;
+        endMove();
+      } else if (
+        this.board[8] === 'X' &&
+        this.board[4] === 'X' &&
+        this.board[0] === ''
+      ) {
+        this.board[0] = this.playerHand;
+        endMove();
       } else {
-        this.aiMove();
+        const i = Number((Math.random() * 9).toFixed());
+        if (this.board[i] === '') {
+          this.board[i] = this.playerHand;
+          endMove();
+        } else {
+          this.aiMove();
+        }
       }
     }
   }

@@ -1,6 +1,8 @@
 <div class="score score--x">
-  <span class="score__player">X</span><span>: {{ score[0] }} p</span>
+  <span class="score__player">{{ gameMode === "friend" ? "X" : "You" }}</span
+  ><span>: {{ score[0] }} p</span>
 </div>
 <div class="score score--o">
-  <span class="score__player">O</span><span>: {{ score[1] }} p</span>
+  <span class="score__player">{{ gameMode === "friend" ? "O" : "AI" }}</span
+  ><span>: {{ score[1] }} p</span>
 </div>

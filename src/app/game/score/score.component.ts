@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { GameService } from '../game.service';
+import { GameService } from '../../shared/game.service';
 
 @Component({
   selector: 'app-score',
@@ -9,12 +9,14 @@ import { GameService } from '../game.service';
 })
 export class ScoreComponent implements OnInit, OnDestroy {
   score!: number[];
+  gameMode!: 'friend' | 'ai';
 
   getScore!: Subscription;
 
   constructor(private gameService: GameService) {}
 
   ngOnInit(): void {
+    this.gameMode = this.gameService.gameMode;
     this.score = [0, 0];
     this.getScore = this.gameService.winnerScore.subscribe((score) => {
       this.score = score;

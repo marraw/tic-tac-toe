@@ -12,7 +12,7 @@ import {
   styleUrls: ['./square.component.scss'],
 })
 export class SquareComponent {
-  @Input() value?: string;
+  @Input() button?: string;
   @ViewChild('square') square!: ElementRef;
 
   @HostListener('window:keydown', ['$event'])

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GameService } from 'src/app/game/game.service';
+import { GameService } from 'src/app/shared/game.service';
 
 @Component({
   selector: 'app-splash-screen',
