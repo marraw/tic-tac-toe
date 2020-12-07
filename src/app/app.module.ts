@@ -7,6 +7,8 @@ import { SharedModule } from './shared/shared.module';
 import { StartModule } from './start/start.module';
 import { GameModule } from './game/game.module';
 import { AppComponent } from './app.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +19,7 @@ import { AppComponent } from './app.component';
     SharedModule,
     StartModule,
     GameModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],

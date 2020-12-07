@@ -5,3 +5,7 @@ This is my second project created with Angular CLI (version 11.0.2). A very simp
 ## Styles
 
 This is my first app in which I'm using SCSS and it really makes things easier.
+
+## Progressive Web App
+
+The game is working as a PWA. You can add a shortcut to your homescreen or even play offline.
