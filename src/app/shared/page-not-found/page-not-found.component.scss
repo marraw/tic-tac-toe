@@ -26,21 +26,3 @@
     font-size: 15px;
   }
 }
-
-@media (min-width: 768px) {
-  .error-message {
-    i {
-      margin-bottom: 30px;
-      font-size: 110px;
-    }
-
-    strong {
-      font-size: 80px;
-    }
-
-    span {
-      margin-top: 20px;
-      font-size: 30px;
-    }
-  }
-}

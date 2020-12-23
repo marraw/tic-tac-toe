@@ -26,8 +26,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": ["src/assets", "src/manifest.webmanifest"],
-            "styles": ["src/scss/styles.scss"],
+            "assets": [
+              "src/assets",
+              "src/manifest.webmanifest"
+            ],
+            "styles": [
+              "src/scss/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -86,8 +91,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": ["src/assets", "src/manifest.webmanifest"],
-            "styles": ["src/scss/styles.scss"],
+            "assets": [
+              "src/assets",
+              "src/manifest.webmanifest"
+            ],
+            "styles": [
+              "src/scss/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -100,7 +110,9 @@
               "e2e/tsconfig.json",
               "tsconfig.server.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -154,7 +166,9 @@
           "options": {
             "browserTarget": "tic-tac-toe:build:production",
             "serverTarget": "tic-tac-toe:server:production",
-            "routes": ["/"]
+            "routes": [
+              "/"
+            ]
           },
           "configurations": {
             "production": {}
@@ -163,5 +177,8 @@
       }
     }
   },
-  "defaultProject": "tic-tac-toe"
+  "defaultProject": "tic-tac-toe",
+  "cli": {
+    "analytics": "a52acfd3-f0c3-4dea-a03c-65c3dd402418"
+  }
 }
