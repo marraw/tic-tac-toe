@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-This is my **second** project created with Angular CLI (version 11.0.2). A very simple game that let's you play vs a friend sharing one device or against AI.
+This is my **second** project created with **Angular CLI** (version 11.0.2). A very simple game that let's you play vs a friend sharing one device or against AI.
 
 ## Technologies
 
@@ -28,7 +28,7 @@ To build prerender app. The outcome will be located at **/dist/browser** folder.
 
 ## Server
 
-App is prerendered with Angular Universal which improves SEO a lot. For a server I'm using [Netlify](https://www.netlify.com/) service.
+App is prerendered with **Angular Universal** which improves **SEO** a lot. For a server I'm using [Netlify](https://www.netlify.com/) service.
 
 ## Layout
 
